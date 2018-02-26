@@ -1,0 +1,12 @@
+// Footer Disclaimer text
+.footer-disclaimer-text {
+  p {
+    color: #ffffff;
+    padding-top: 20px;
+    line-height: normal;
+    font: {
+      size: rem-calc(13);
+      weight: 300;
+    }
+  }
+}

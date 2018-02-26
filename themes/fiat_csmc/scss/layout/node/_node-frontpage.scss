@@ -1,0 +1,128 @@
+// Full View Mode
+.l-node-frontpage--full {
+
+  &__title--wrap {
+    @extend .csmc-drop-shadow--with-bg-colour;
+  }
+
+  &__form,
+  &__title {
+    @include grid-row();
+    &-inner {
+      @include grid-column(12);
+    }
+  }
+
+  &__content {
+    @include grid-row();
+    max-width: rem-calc(1440);
+    &-above {
+      @include grid-column(12);
+      &-inner {
+        margin: {
+          top: 20px;
+          bottom: 10px;
+        }
+        padding: {
+          top: 20px;
+          right: 20px;
+          bottom: 10px;
+          left: 20px;
+        }
+        @extend .csmc-drop-shadow--with-bg-colour;
+      }
+    }
+    &-below {
+      @include grid-column(12);
+      &-inner {
+        margin: {
+          top: 10px;
+          bottom: 20px;
+        }
+        padding: {
+          top: 20px;
+          right: 20px;
+          bottom: 10px;
+          left: 20px;
+        }
+        @extend .csmc-drop-shadow--with-bg-colour;
+      }
+    }
+  }
+
+  &__promotional-blocks {
+    @include grid-row();
+    &-outer {
+      @extend .csmc-drop-shadow--with-bg-colour;
+    }
+    &-inner {
+      @include grid-column($columns:12);
+    }
+  }
+
+  &__featured-vehicles {
+    @include grid-row();
+    &-inner {
+      @include grid-column(12);
+      @media #{$medium-only} { @include grid-column(6); }
+      @media #{$large-up} { @include grid-column(9); }
+    }
+  }
+  &__images {
+    width: 100%;
+    margin-bottom: 15px;
+    @media #{$medium-up} {
+      float: right;
+      width: 320px;
+      margin-left: 15px;
+    }
+  }
+  &__search {
+    @include grid-row();
+    max-width: rem-calc(1600);
+    @media (min-width: 1349px) {
+      height: 0;
+      &-outer {
+        height: 0;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+      }
+    }
+
+    &-inner {
+      @include grid-column(12);
+      @media (min-width: 1024px) and (max-width: 1349px) {
+        @include grid-column($columns:12,$collapse:true);
+      }
+      @media (min-width: 1349px) {
+        max-width: rem-calc(330);
+      }
+    }
+  }
+  &__slideshow {
+    position: relative;
+    width: 100%;
+  }
+
+  &__opening-hours-anchor {
+    display: none;
+    position: absolute;
+    left: 10%;
+    top: 0;
+    z-index: 10;
+    @media #{$medium-up} {
+      display: block;
+    }
+  }
+
+  &__videos {
+    width: 100%;
+    @media #{$medium-up} {
+      float: right;
+      clear: right;
+      width: 320px;
+      margin-left: 15px;
+    }
+  }
+}

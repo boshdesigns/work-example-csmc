@@ -1,0 +1,68 @@
+// Page Bundle
+.node-page {
+  margin-bottom: 20px;
+
+  // Full View Mode
+  &.view-mode-full {
+    .children { @include block-grid(1); }
+
+    .group-new-manufacturers {
+      &__list {
+        @include block-grid(2);
+        margin: 0;
+
+        li {
+          text-align: center;
+        }
+      }
+
+      &--image {
+        img {
+          margin-bottom: 20px;
+          @extend .csmc-drop-shadow;
+          @include CSMCborder-radius(2px);
+        }
+      }
+
+      &--button {
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+    .field-name-field-files {
+      .file {
+        @include button($padding:$button-lrg);
+        float: left;
+        clear: left;
+        margin-bottom: 10px;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+    }
+
+    .field-name-field-form {
+      .entity-entityform-type {
+        background-color: #30404f;
+        h2 {
+          color: #ffffff;
+          font-size: rem-calc(22);
+          margin: {
+            top: 20px;
+            left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  // Teaser View Mode
+  &.view-mode-teaser {
+    .field-name-field-image { margin-bottom: 10px; }
+    .field-name-node-link a { @include button(); }
+  }
+
+}

@@ -1,0 +1,163 @@
+.slick {
+  margin: 0;
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: auto;
+    height: 30px;
+    margin-top: -15px;
+    padding: 0;
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .slick-prev { left: 10px; }
+  .slick-next { right: 10px; }
+  .slick-prev::before,
+  .slick-next::before {
+    font-family: 'FontAwesome';
+    font-size: rem-calc(30);
+    line-height: 1;
+    color: $oil;
+    opacity: .75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .slick-prev::before { content: '\f053'; }
+  .slick-next::before { content: '\f054'; }
+  .slick-prev:hover::before,
+  .slick-prev:focus::before,
+  .slick-next:hover::before,
+  .slick-next:focus::before { opacity: 1; }
+
+  .slick-slide {
+      img{
+        margin: 0 auto;
+      }
+    }
+
+  // Slideshow
+  &--slideshow {
+    margin-bottom: 20px;
+    &.slick--frontpage {
+      margin-bottom: 0;
+    }
+  }
+
+  // Latest Vehicles
+  &--latest-vehicles,
+  &--latest-vehicles-homepage {
+    margin-bottom: 20px;
+    .slick-prev,
+    .slick-next {
+      top: -22px;
+      width: auto;
+    }
+    .slick-prev {
+      left: auto;
+      right: 35px;
+      // @media #{$large-up} { left: -20px; }
+    }
+    .slick-next {
+      right: 0px;
+      // @media #{$large-up} { right: -20px; }
+    }
+    .slick-prev::before,
+    .slick-next::before {
+      font-size: rem-calc(22);
+      @media #{$large-up} { font-size: rem-calc(24); }
+    }
+  }
+
+  // Featured Vehicles
+  &--featured-vehicles {
+    margin-bottom: 20px;
+    margin-left: -$column-gutter;
+    .slick-slide { margin-left: $column-gutter; }
+    .slick-prev,
+    .slick-next {
+      background-color: $secondary-color;
+      border-radius: 3px;
+      height: 28px;
+      padding: 5px 0 0;
+      text-align: center;
+      width: 28px;
+
+      // Medium Up Only
+      @media #{$medium-up} {
+        width: 34px;
+        height: 34px;
+        padding: 5px 0 0;
+      }
+    }
+
+    .slick-prev {
+      left: ($column-gutter / 2);
+
+      // Extra Large Up
+      @media #{$xlarge-up} {
+        left: 6px;
+      }
+    }
+
+    .slick-next {
+      right: - ($column-gutter / 2);
+
+      // Extra Large Up
+      @media #{$xlarge-up} {
+        right: -26px;
+      }
+    }
+
+    .slick-prev:before {
+      margin-left: -3px;
+    }
+
+    .slick-next:before {
+      margin-right: -3px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: #ffffff;
+      font-size: rem-calc(20);
+      opacity: 1;
+
+      // Medium Up Only
+      @media #{$medium-up} {
+        font-size: rem-calc(26);
+      }
+    }
+
+    // Hover and Active
+    .slick-prev:hover::before,
+    .slick-prev:focus::before,
+    .slick-next:hover::before,
+    .slick-next:focus::before {
+      opacity: .75;
+    }
+  }
+
+  &--vehicle-gallery-main {
+    margin-bottom: 15px;
+  }
+
+  // Vehicle Thumbs
+  &--vehicle-gallery-thumbs {
+    margin: 5px 30px 15px 25px;
+    .slick-slide { margin-left: 5px; }
+    .slick-prev {
+      left: -23px;
+      width: auto;
+    }
+    .slick-next {
+      right: -28px;
+      width: auto;
+    }
+  }
+
+}

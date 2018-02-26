@@ -1,0 +1,35 @@
+// block-fmgauto-finance-plugins styling
+.block-fmgauto-finance-plugins {
+  // General styling
+  padding-top: 5px;
+  h3 {
+    font: {
+      size: rem-calc(20);
+      weight: 300;
+    }
+    @media #{$large-up} {
+      padding-top: 25px;
+    }
+  }
+
+  label {
+    color: $primary-color;
+    font-weight: 300;
+  }
+
+  .form-item {
+    margin-bottom: 0;
+  }
+
+  .button {
+    margin-top: 2px;
+    width: 100%;
+    @include CSMCborder-radius(2px);
+    @media #{$medium-only} {
+      margin: {
+        top: 21px;
+        bottom: 0;
+      }
+    }
+  }
+}

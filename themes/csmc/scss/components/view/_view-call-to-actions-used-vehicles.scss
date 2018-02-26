@@ -1,0 +1,120 @@
+// Call to Actions (Used Vehicles) View
+.view-call-to-actions-used-vehicles {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  &__list {
+    @include block-grid(2);
+    @media #{$medium-up} { @include block-grid($per-row:5,$spacing:10px); }
+    li {
+      padding-bottom: 0;
+
+      // Default styling
+      * {
+        @include CSMCtransition(0.3s);
+      }
+      .bean-call-to-action-used-vehicle {
+        background-color: $primary-color;
+        border-bottom: {
+          color: darken($primary-color, 10%);
+          width: 2px;
+          style: solid;
+        }
+      }
+      &:hover {
+        .bean-call-to-action-used-vehicle {
+          border-bottom-color: lighten($primary-color, 15%);
+        }
+      }
+
+      // nth-child 2
+      $second-promo: #93bc18;
+      &:nth-child(2) {
+        .bean-call-to-action-used-vehicle {
+          background-color: $second-promo;
+          border-bottom: {
+            color: darken($second-promo, 10%);
+            width: 2px;
+            style: solid;
+          }
+        }
+        &:hover {
+          .bean-call-to-action-used-vehicle {
+            border-bottom-color: lighten($second-promo, 15%);
+          }
+        }
+      }
+
+      // nth-child 3
+      $third-promo: #a80e4c;
+      &:nth-child(3) {
+        .bean-call-to-action-used-vehicle {
+          background-color: $third-promo;
+          border-bottom: {
+            color: darken($third-promo, 10%);
+            width: 2px;
+            style: solid;
+          }
+        }
+        &:hover {
+          .bean-call-to-action-used-vehicle {
+            border-bottom-color: lighten($third-promo, 15%);
+          }
+        }
+      }
+
+      // nth-child 4
+      $fourth-promo: #e7a70d;
+      &:nth-child(4) {
+        .bean-call-to-action-used-vehicle {
+          background-color: $fourth-promo;
+          border-bottom: {
+            color: darken($fourth-promo, 10%);
+            width: 2px;
+            style: solid;
+          }
+        }
+        &:hover {
+          .bean-call-to-action-used-vehicle {
+            border-bottom-color: lighten($fourth-promo, 15%);
+          }
+        }
+      }
+
+      // nth-child 5
+      $fifth-promo: #009fe3;
+      &:nth-child(5) {
+        .bean-call-to-action-used-vehicle {
+          background-color: $fifth-promo;
+          border-bottom: {
+            color: darken($fifth-promo, 10%);
+            width: 2px;
+            style: solid;
+          }
+        }
+        &:hover {
+          .bean-call-to-action-used-vehicle {
+            border-bottom-color: lighten($fifth-promo, 15%);
+          }
+        }
+      }
+
+      // nth-child 6
+      $sixth-promo: #aaaaaa;
+      &:nth-child(6) {
+        .bean-call-to-action-used-vehicle {
+          background-color: $sixth-promo;
+          border-bottom: {
+            color: darken($sixth-promo, 10%);
+            width: 2px;
+            style: solid;
+          }
+        }
+        &:hover {
+          .bean-call-to-action-used-vehicle {
+            border-bottom-color: lighten($sixth-promo, 15%);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// Block Images View
+.view-block-images {
+  text-align: center;
+  &__list {
+    margin-left: 0;
+    margin-bottom: 10px;
+    li {
+      display: inline-block;
+      list-style: none;
+      a {
+        display: block;
+        margin: 0 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+// New Vehicle Bundle
+.node-new-vehicle {
+
+  // Full View Mode
+  &.view-mode-full {
+    .field-name-title {
+      h2 { margin-bottom: 0; }
+    }
+    .field-name-field-from-price {
+      display: inline-block;
+      color: $primary-color;
+      font: {
+        size: rem-calc(26);
+        weight: 400;
+      }
+      letter-spacing: 1px;
+      margin-right: 5px;
+    }
+    .field-name-field-price--new-vehicle {
+      display: inline-block;
+      font: {
+        size: rem-calc(32);
+        weight: 400;
+      }
+      letter-spacing: 1px;
+      span { font-size: rem-calc(18); }
+    }
+
+    // Related Vehicle Dropdown
+    .related-vehicles-dropdowns {
+      @include button($full-width:true,$padding:$button-lrg);
+      border-bottom: {
+        color: darken($primary-color, 10%);
+        width: 2px;
+        style: solid;
+      }
+      height: auto;
+      padding: {
+        top: 10px;
+        bottom: 10px;
+      }
+      @include CSMCborder-radius(2px);
+      i {
+        display: block;
+        font-size: rem-calc(27);
+        margin-bottom: 10px;
+      }
+    }
+
+    #related-vehicles-dropdown-vehicles {
+      display: none;
+      padding: {
+        top: 10px;
+        right: 20px;
+        left: 20px;
+        bottom: 10px;
+      }
+      margin-bottom: 20px;
+      @extend .csmc-drop-shadow--with-bg-colour;
+    }
+
+    .field-name-files {
+      @include block-grid(1);
+      li {
+        padding-bottom: 0;
+        .file {
+          @include button($full-width:true,$padding:$button-lrg);
+          margin-bottom: 8px;
+        }
+      }
+    }
+    .field-name-share {
+      display: inline-block;
+      .label-inline {
+        display: inline-block;
+        font-size: rem-calc(16);
+        margin-right: 8px;
+      }
+      .social {
+        display: inline-block;
+        margin: 0;
+        li {
+          display: inline-block;
+          margin-right: 3px;
+          i {
+            width: 22px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            font-size: rem-calc(18);
+            text-align: center;
+            &.fa-facebook { color: map-get($social-icons, facebook); }
+            &.fa-twitter { color: map-get($social-icons, twitter); }
+            &.fa-google-plus { color: map-get($social-icons, google-plus); }
+          }
+        }
+      }
+    }
+
+    .field-name-field-form {
+      margin-top: 20px;
+      .entity-entityform-type {
+        background-color: #30404f;
+        h2 {
+          color: #ffffff;
+          font-size: rem-calc(22);
+          margin: {
+            top: 20px;
+            left: 20px;
+          }
+        }
+
+        .entitytype-vehicle_enquiry_form-form {
+          padding: 20px;
+        }
+      }
+    }
+
+    .field-name-new-cap-variants {
+      .variants { @include block-grid(1); }
+    }
+  }
+
+  // Teaser View Mode
+  &.view-mode-teaser {
+    .field-name-field-new-veh-images {
+      margin-bottom: 10px;
+      @extend .csmc-drop-shadow;
+    }
+    .field-name-title {
+      h4 {
+        margin-bottom: 0;
+        line-height: rem-calc(20);
+      }
+    }
+    .field-name-field-from-price {
+      display: inline-block;
+      font-size: rem-calc(10);
+    }
+    .field-name-field-price { display: inline-block; }
+  }
+
+}

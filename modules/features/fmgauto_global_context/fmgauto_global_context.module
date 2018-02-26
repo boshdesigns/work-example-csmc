@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Global Context feature.
+ */
+
+include_once 'fmgauto_global_context.features.inc';

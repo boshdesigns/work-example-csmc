@@ -1,0 +1,16 @@
+name = Global Context
+description = Provides context for header, footer and sidebars
+core = 7.x
+package = CSMC
+version = 7.x-1.7
+project = fmgauto_global_context
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = fmg_search_blocks
+dependencies[] = fmgauto_generic_site_settings
+dependencies[] = menu
+dependencies[] = views
+features[context][] = fmgauto_global_layout
+features[context][] = fmgauto_global_sidebar
+features[ctools][] = context:context:3
+features[features_api][] = api:2

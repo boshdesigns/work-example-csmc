@@ -1,0 +1,154 @@
+// Promotional Blocks View
+.view-promotional-blocks {
+
+  // Homepage Display
+  &.view-display-id-homepage {
+    .view-promotional-blocks__list {
+      @include block-grid($per-row:2,$spacing:2px);
+      @media #{$medium-up}  {
+        @include block-grid($per-row:3,$spacing:10px);
+      }
+
+      // Apply styling to each li
+      li {
+        // Default styling
+        * {
+          @include CSMCtransition(0.3s);
+        }
+        .field-name-field-image {
+          background-color: $primary-color;
+        }
+        .field-name-bean-title {
+          border-bottom: {
+            color: darken($primary-color, 10%);
+            width: 2px;
+            style: solid;
+          }
+          @include CSMCgradient(rgba($primary-color, 0.7), $primary-color);
+        }
+        &:hover {
+          .field-name-field-image {
+            img {
+              opacity: 0.7;
+            }
+          }
+          .field-name-bean-title {
+            border-bottom-color: lighten($primary-color, 15%);
+          }
+        }
+
+        // nth-child 2
+        $second-promo: #93bc18;
+        &:nth-child(2) {
+          .field-name-field-image {
+            background-color: $second-promo;
+          }
+          .field-name-bean-title {
+            border-bottom: {
+              color: darken($second-promo, 10%);
+              width: 2px;
+              style: solid;
+            }
+            @include CSMCgradient(rgba($second-promo, 0.7), $second-promo);
+          }
+          &:hover {
+            .field-name-bean-title {
+              border-bottom-color: lighten($second-promo, 15%);
+            }
+          }
+        }
+
+        // nth-child 3
+        $third-promo: #a80e4c;
+        &:nth-child(3) {
+          .field-name-field-image {
+            background-color: $third-promo;
+          }
+          .field-name-bean-title {
+            border-bottom: {
+              color: darken($third-promo, 10%);
+              width: 2px;
+              style: solid;
+            }
+            @include CSMCgradient(rgba($third-promo, 0.7), $third-promo);
+          }
+          &:hover {
+            .field-name-bean-title {
+              border-bottom-color: lighten($third-promo, 15%);
+            }
+          }
+        }
+
+        // nth-child 4
+        $fourth-promo: #e7a70d;
+        &:nth-child(4) {
+          .field-name-field-image {
+            background-color: $fourth-promo;
+          }
+          .field-name-bean-title {
+            border-bottom: {
+              color: darken($fourth-promo, 10%);
+              width: 2px;
+              style: solid;
+            }
+            @include CSMCgradient(rgba($fourth-promo, 0.7), $fourth-promo);
+          }
+          &:hover {
+            .field-name-bean-title {
+              border-bottom-color: lighten($fourth-promo, 15%);
+            }
+          }
+        }
+
+        // nth-child 5
+        $fifth-promo: #009fe3;
+        &:nth-child(5) {
+          .field-name-field-image {
+            background-color: $fifth-promo;
+          }
+          .field-name-bean-title {
+            border-bottom: {
+              color: darken($fifth-promo, 10%);
+              width: 2px;
+              style: solid;
+            }
+            @include CSMCgradient(rgba($fifth-promo, 0.7), $fifth-promo);
+          }
+          &:hover {
+            .field-name-bean-title {
+              border-bottom-color: lighten($fifth-promo, 15%);
+            }
+          }
+        }
+
+        // nth-child 6
+        $sixth-promo: #aaaaaa;
+        &:nth-child(6) {
+          .field-name-field-image {
+            background-color: $sixth-promo;
+          }
+          .field-name-bean-title {
+            border-bottom: {
+              color: darken($sixth-promo, 10%);
+              width: 2px;
+              style: solid;
+            }
+            @include CSMCgradient(rgba($sixth-promo, 0.7), $sixth-promo);
+          }
+          &:hover {
+            .field-name-bean-title {
+              border-bottom-color: lighten($sixth-promo, 15%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Sidebar Display
+  &.view-display-id-page_blocks,
+  &.view-display-id-sidebar {
+    .view-promotional-blocks__list { @include block-grid(1); }
+  }
+
+}

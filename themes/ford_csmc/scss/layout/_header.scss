@@ -1,0 +1,42 @@
+.l-header {
+  background-color: #ffffff;
+  padding-bottom: 10px;
+  @media #{$medium-up} {
+    padding-top: 5px;
+    padding-bottom: 25px;
+  }
+  &__contact-details {
+    margin-bottom: 10px;
+    @include grid-column(12);
+    @media #{$medium-up} {
+      @include grid-column(4);
+      margin-top: 19px;
+    }
+  }
+  &__inner { @include grid-row(); }
+  &__manufacturer-logo {
+    margin-bottom: 10px;
+    text-align: center;
+    @include grid-column(12);
+    @media #{$medium-up} {
+      text-align: right;
+      @include grid-column(4);
+    }
+  }
+  &__group-home-link {
+    @include grid-column($columns:12,$collapse:true);
+    margin-bottom: 15px;
+    @media #{$medium-up} {
+      @include grid-column(12);
+    }
+  }
+  &__logo {
+    margin-bottom: 10px;
+    text-align: center;
+    @include grid-column(12);
+    @media #{$medium-up} {
+      @include grid-column(4);
+      margin-top: 22px;
+    }
+  }
+}

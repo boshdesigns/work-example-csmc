@@ -1,0 +1,158 @@
+.entityform {
+  position: relative;
+
+  // Style these up just for entityforms
+  select,
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="color"] {
+    color: #ffffff;
+    background-color: #3a5365;
+    height: 47px;
+  }
+
+  textarea {
+    color: #ffffff;
+    background-color: #3a5365;
+  }
+
+  select {
+    background: {
+      image: url(../images/select-arrow.png);
+      position: top right;
+      repeat: no-repeat;
+    }
+    height: 47px;
+    &:hover {
+      background-image: url(../images/select-arrow-hover.png);
+    }
+  }
+
+  // Style up the button for the entityforms
+  .button {
+    background-color: #93bc18;
+    border-bottom: {
+      color: darken(#93bc18, 10%);
+      width: 2px;
+      style: solid;
+    }
+    @media #{$small-up} {
+      width: 200px;
+    }
+    &:hover {
+      background-color: $secondary-color;
+      border-bottom-color: $secondary-color;
+    }
+  }
+
+  // get rid of the grippie
+  .grippie {
+    display: none;
+  }
+
+  // Enquiry Form
+  &.entitytype-general_enquiries-form {
+    padding: 20px 20px 0 20px;
+    background-color: #30404f;
+    label {
+      color: #fff;
+      font-weight: 400;
+      .form-required {
+        color: #ffffff;
+      }
+    }
+    .entityform-row {
+      @include grid-row($behavior:nest);
+      @media #{$large-up} {
+        margin-bottom: 20px;
+      }
+      .field-name-field-ef-name,
+      .field-name-field-email,
+      .field-name-field-phone {
+        @include grid-column(12);
+        @media #{$medium-up} { @include grid-column(4); }
+      }
+      .field-name-field-branch,
+      .field-name-field-body { @include grid-column(12); }
+    }
+  }
+
+  // Vehicle Enquiry Form
+  &.entitytype-vehicle_enquiry_form-form {
+    background-color: transparent;
+    padding-top: 20px;
+    margin-bottom: 0;
+    label {
+      color: #fff;
+      font-weight: 400;
+      .form-required {
+        color: #ffffff;
+      }
+    }
+    .entityform-row {
+      @include grid-row($behavior:nest);
+      @media #{$large-up} {
+        margin-bottom: 20px;
+      }
+      .field-name-field-ef-name,
+      .field-name-field-email,
+      .field-name-field-phone {
+        @include grid-column(12);
+        @media #{$medium-up} { @include grid-column(4); }
+      }
+      .field-name-field-branch,
+      .field-name-field-body { @include grid-column(12); }
+    }
+  }
+
+  // Vehicle Valuation
+  &.entitytype-fmg_vehicle_valuation-form,
+  &.entitytype-fmg_caravan_motorhome_valuation-form,
+  &.entitytype-fmg_service_quotation-form {
+    color: #ffffff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #ffffff;
+    }
+    input {
+      color: #000000;
+    }
+    fieldset {
+      background-color: #30404f;
+      border: none;
+    }
+    label,
+    .fieldset-description,
+    .has-tip { color: #fff; }
+    #edit-field-service-summary {
+      padding: {
+        left: 15px;
+        right: 15px;
+      }
+    }
+  }
+
+  &.entitytype-fmg_service_quotation-form {
+    #edit-field-date::before {
+      content: 'Please let us know if you have any specific requirements or would like any additional work you would like us to take a look at:';
+      clear: both;
+      text-align: left;
+    }
+  }
+
+}

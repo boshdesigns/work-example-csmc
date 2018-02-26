@@ -1,0 +1,14 @@
+// node-department
+
+.node-department {
+  position: relative;
+  .vocabulary-opening-hours:nth-child(5) {
+    margin-top: 10px;
+    .field-name-field-hours {
+      font: {
+        size: rem-calc(14);
+        weight: 300;
+      }
+    }
+  }
+}

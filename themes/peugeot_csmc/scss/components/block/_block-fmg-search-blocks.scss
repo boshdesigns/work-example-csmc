@@ -1,0 +1,483 @@
+.block-fmg-search-blocks {
+  background-color: darken($primary-color, 10%);
+  margin-bottom: 20px;
+  padding: 15px;
+  .used-search-block-heading {
+    @include clearfix();
+  }
+  .new-search-block-title,
+  .used-search-block-title {
+    float: left;
+    margin-bottom: 15px;
+    h2 {
+      margin-bottom: 0;
+      color: #ffffff;
+      font-size: rem-calc(16);
+    }
+  }
+  #facet_ftm_field_vehicle_price,
+  #facet_ftm_fmg_quoteware_api_payment {
+    @include grid-row($behavior: nest);
+    .form-item {
+      @include grid-column(6);
+      margin-bottom: 0;
+      &.form-item-min { padding-right: 5px; }
+      &.form-item-max { padding-left: 5px; }
+      @media #{$medium-up} {
+
+      }
+    }
+  }
+  .button {
+    @include button($bg:lighten($primary-color, 10%));
+    border-bottom: {
+      color: darken($primary-color, 15%);
+      width: 2px;
+      style: solid;
+    }
+    font-size: rem-calc(16);
+    margin-top: 15px;
+    margin-bottom: 0;
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    }
+    width: 100%;
+    @include CSMCborder-radius(2px);
+  }
+
+  // Change some of the styling for select elements
+  .form-item {
+    margin-bottom: 5px;
+    select {
+      margin-bottom: 0;
+    }
+  }
+
+  &.block-fmg-search-blocks-fmg-used-vehicle-search-block {
+    .used-search-block-count {
+      color: lighten($primary-color, 8%);
+      font-size: rem-calc(14);
+      font-weight: bold;
+      float: right;
+      span {
+        color: #ffffff;
+        padding-left: 3px;
+      }
+    }
+
+    #used-search-facets {
+      .basic-search {
+        @include grid-column($columns:12,$collapse:true);
+      }
+    }
+
+    #fmg-solr-toggle-form {
+      @include grid-row($behavior: nest);
+      clear: both;
+      margin-bottom: 15px;
+
+      .form-radios {
+        @include clearfix;
+        margin-top: 10px;
+      }
+
+      &__total,
+      &__ivendi {
+        .form-item {
+          float: left;
+          margin: 0 5px 0 0;
+          width: 100%;
+          height: 26px;
+          position: relative;
+        }
+
+        label, input {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+
+        input[type="radio"] {
+          opacity: 0.011;
+          z-index: 100;
+        }
+
+        input[type="radio"]:checked + label {
+          background: {
+            image: url(../images/radio-button-stripe.png);
+            repeat: no-repeat;
+            position: left bottom;
+          }
+        }
+
+        label {
+           background: {
+             image: url(../images/radio-button-stripe.png);
+             repeat: no-repeat;
+             position: left top;
+           }
+           color: #ffffff;
+           cursor: pointer;
+           font: {
+             size: rem-calc(15);
+             weight: 700;
+           }
+           padding: {
+             top: 2px;
+             left: 30px;
+           }
+           z-index: 90;
+        }
+      }
+
+
+      &__total {
+        @include grid-column(5);
+        margin-bottom: 0;
+        padding-right: 0;
+        .form-item { margin-top: 0; }
+      }
+      &__ivendi {
+        @include grid-column(7);
+        margin-bottom: 0;
+        padding-left: 0;
+        .form-item { margin-top: 0; }
+      }
+      .form-radio {
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      .option {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    // fmg_facetapi_select
+    .fmg_facetapi_select {
+      fieldset {
+        padding: 2px 0 10px;
+        margin: 0;
+        border: 0;
+
+        legend {
+          color: #fff;
+          background-color: transparent;
+          font-size: rem-calc(12px);
+          font-weight: normal;
+          padding-left: ($column-gutter / 4);
+          padding-right: ($column-gutter / 4);
+        }
+      }
+    }
+
+    // Range input
+    .fmg_facetapi_range {
+      @include grid-row($behavior: nest);
+
+      fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+
+        legend {
+          @include grid-column(12);
+          background-color: transparent;
+          color: #fff;
+          font-size: rem-calc(12px);
+          font-weight: normal;
+          margin: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      .form-type-select {
+        @include grid-column(6);
+        margin-bottom: 0;
+
+        // Medium Up Only
+        @media #{$medium-up} {
+          @include grid-column(12);
+        }
+      }
+
+      .form-submit {
+        display: none;
+      }
+    }
+
+    // fmg_keyword_search
+    .fmg_keyword_search {
+
+      fieldset {
+        padding: 2px 0 10px;
+        margin: 0;
+        border: 0;
+
+        legend {
+          color: #fff;
+          background-color: transparent;
+          font-size: rem-calc(12px);
+          font-weight: normal;
+          padding-left: ($column-gutter / 4);
+          padding-right: ($column-gutter / 4);
+        }
+      }
+    }
+
+    #toggle-options {
+      display: none;
+    }
+  }
+}
+
+.front {
+  .block-fmg-search-blocks {
+    margin-top: 20px;
+    @media #{$large-up} {
+      margin-top: 0;
+    }
+  }
+}
+
+.not-front {
+  .block-fmg-search-blocks {
+    padding: 15px;
+    @extend .csmc-drop-shadow--with-bg-colour;
+    @include CSMCborder-radius(2px);
+  }
+}
+
+// Front Page Min 1024px - Max 1349px Horizontal Search
+@media (min-width: 1024px) and (max-width: 1349px) {
+  .front {
+    .block-fmg-search-blocks {
+      padding: 20px;
+
+
+      &.block-fmg-search-blocks-fmg-used-vehicle-search-block {
+
+        // Title
+        .new-search-block-title,
+        .used-search-block-title {
+          float: left;
+        }
+
+        //Button
+        .button {
+          margin-top: 0;
+        }
+
+        // Count
+        .used-search-block-count {
+          margin-bottom: 0;
+          text-align: left;
+          float: right;
+        }
+
+        // Used Search Block
+        #used-search-block {
+          @include grid-row($behavior: nest-collapse);
+
+          .used-search-block-heading {
+            @include grid-column($columns:12);
+            .used-search-block-title {
+              margin-left: -7px;
+            }
+          }
+
+          // Main Serach Facets
+          #used-search-facets {
+            @include grid-column($columns:10, $collapse:true);
+            margin-top: -13px;
+
+            .form-type-select,
+            select {
+              margin-bottom: 0;
+            }
+
+            // Basic Search
+            .basic-search {
+              @include grid-column(3);
+              margin: 13px 0 10px;
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+            }
+
+            // Advance Search
+            .advanced-search {
+              @include grid-column(3);
+              margin: 20px 0 10px;
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+            }
+
+            // fmg_facetapi_select
+            .fmg_facetapi_select {
+              fieldset {
+                padding: 2px 0 10px;
+                margin: -20px 0 0 0;
+                border: 0;
+
+                legend {
+                  color: #fff;
+                  background-color: transparent;
+                  font-size: rem-calc(12px);
+                  padding-left: ($column-gutter / 4);
+                  padding-right: ($column-gutter / 4);
+                }
+              }
+            }
+
+            // Range input
+            .fmg_facetapi_range {
+              @include grid-column(6);
+              margin: 0;
+              padding-left: 0;
+              padding-right: 0;
+
+              fieldset {
+                padding-top: 2px;
+                padding-bottom: 10px;
+
+                legend {
+                  color: #fff;
+                  font-size: rem-calc(12px);
+                  padding-left: ($column-gutter / 4);
+                  padding-right: ($column-gutter / 4);
+                }
+
+                .form-type-select {
+                  margin: 0;
+                }
+              }
+
+              .form-type-select {
+                @include grid-column(6);
+                margin: 13px 0 10px;
+                padding-left: ($column-gutter / 4);
+                padding-right: ($column-gutter / 4);
+              }
+            }
+
+
+            // Price Min / Max
+            #facet_ftm_field_vehicle_price {
+              @include grid-column(6);
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+              margin: 13px 0 10px;
+
+              .form-item.form-item-min {
+                @include grid-column(6);
+                padding-left: 0;
+                margin: 0;
+                padding-right: ($column-gutter / 4);
+
+                &.form-type-select {
+                  margin: 0 !important;
+                }
+              }
+
+              .form-item.form-item-max {
+                @include grid-column(6);
+                padding-right: 0;
+                padding-left: ($column-gutter / 4);
+
+                &.form-type-select {
+                  margin: 0 !important;
+                }
+              }
+            }
+
+            // Finance Price Min / Max
+            .price_toggle {
+              @include grid-column(6);
+              padding-left: ($column-gutter / 4);
+              padding-right: ($column-gutter / 4);
+              position: relative;
+
+              #fmg-solr-toggle-form {
+                @include grid-column($columns:10,$pull:4);
+                position: absolute;
+                top: -40px;
+
+                &__total {
+                  @include grid-column(4);
+                }
+                &__ivendi {
+                  @include grid-column(8);
+                }
+
+                .form-item {
+                  margin-bottom: 0;
+                }
+              }
+
+              #facet_ftm_field_vehicle_price,
+              #facet_ftm_fmg_quoteware_api_payment {
+                @include grid-column(12);
+                margin: 13px 0 10px;
+                padding-left: 0;
+                padding-right: 0;
+
+                .form-item {
+                  @include grid-column(6);
+                  padding-left: 0;
+                  padding-right: 10px;
+
+                  + .form-item {
+                    padding-left: 10px;
+                    padding-right: 0;
+                  }
+
+                  &.form-type-select {
+                    margin: 0 !important;
+                  }
+                }
+
+                select {
+                  &.min-range,
+                  &.max-range {
+                    @include CSMCborder-radius(2px);
+                  }
+                }
+              }
+            }
+
+            // fmg_keyword_search
+            .fmg_keyword_search {
+              margin-top: 0;
+
+              fieldset {
+                padding: 2px 0 10px;
+                margin: 0;
+                border: 0;
+
+                legend {
+                  color: #fff;
+                  background-color: transparent;
+                  font-size: rem-calc(12px);
+                  font-weight: normal;
+                  padding-left: ($column-gutter / 4);
+                  padding-right: ($column-gutter / 4);
+                }
+              }
+            }
+          }
+
+
+          // Submit Button
+          .used-search-block-submit {
+            @include grid-column($columns:2, $float:right);
+          }
+
+        }
+      }
+    }
+  }
+}

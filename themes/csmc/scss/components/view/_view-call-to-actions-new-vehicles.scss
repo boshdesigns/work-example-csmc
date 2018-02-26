@@ -1,0 +1,7 @@
+// Call to Actions (New Vehicles) View
+.view-call-to-actions-new-vehicles {
+  &__list {
+    @include block-grid(1);
+    li { padding-bottom: 0; }
+  }
+}

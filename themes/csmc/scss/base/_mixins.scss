@@ -1,0 +1,108 @@
+// @file
+// Place your mixins here. Feel free to roll your own mixins.
+
+// Transition
+@mixin CSMCtransition($time) {
+  -webkit-transition: all $time ease-in-out;
+  -moz-transition: all $time ease-in-out;
+  -o-transition: all $time ease-in-out;
+  transition: all $time ease-in-out;
+}
+
+// Transform
+@mixin CSMCtransform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+// Rotate
+@mixin CSMCrotate($deg) {
+  @include CSMCtransform(rotate(#{$deg}deg));
+}
+
+// Border Radius
+@mixin CSMCborder-radius($list) {
+  @if length($list) == 1 {
+    -webkit-border-radius: $list;
+    -moz-border-radius: $list;
+    -ms-border-radius: $list;
+    border-radius: $list;
+  } @else {
+    @for $i from 1 through length($list) {
+      // need to set up the vars first
+      $topbottom: null;
+      $leftright: null;
+      @if $i == 1 or $i == 2 { $topbottom: top; } @else {$topbottom: bottom;}
+      @if $i == 1 or $i == 4 {$leftright: left;} @else {$leftright: right;}
+      @if nth($list, $i) > 1 {
+        $value: nth($list, $i);
+        -webkit-border-#{$topbottom}-#{$leftright}-radius: #{$value};
+        -moz-border-radius-#{$topbottom}#{$leftright}: #{$value};
+        border-#{$topbottom}-#{$leftright}-radius: #{$value};
+      }
+    }
+  }
+}
+
+// Background Gradient
+@mixin CSMCgradient($top, $bottom) {
+    background: $top; // Old browsers
+    background: -moz-linear-gradient(top, $top 0%, $bottom 100%); // FF3.6+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); // Chrome,Safari4+
+    background: -webkit-linear-gradient(top, $top 0%,$bottom 100%); // Chrome10+,Safari5.1+
+    background: -o-linear-gradient(top, $top 0%,$bottom 100%); // Opera 11.10+
+    background: -ms-linear-gradient(top, $top 0%,$bottom 100%); // IE10+
+    background: linear-gradient(to bottom, $top 0%,$bottom 100%); // W3C
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$top, endColorstr=$bottom,GradientType=0 ); // IE6-9
+}
+
+// Font Awesome
+@mixin CSMCawesome-icon($icon-name, $beforeOrAfter: "before", $icon-size: 12px, $icon-color: $primary-color, $margin: 0, $padding: 0, $block: false) {
+
+  // Icon Map List - Select few which we might use on a site. Add more if you think they need to be on the list
+  $font-awesome-icons: (
+    bell: "\f0a2",
+    bookmark: "\f02e",
+    calendar: "\f073",
+    car: "\f1b9",
+    clock: "\f017",
+    cloud: "\f0c2",
+    check: "\f00c",
+    camera: "\f030",
+    comments: "\f086",
+    dashboard: "\f0e4",
+    drop: "\f043",
+    flag: "\f024",
+    cogs: "\f085",
+    cog:	"\f013",
+    key:	"\f084",
+    leaf: "\f06c",
+    phone: "\f095",
+    mobile: "\f10b",
+    map: "\f279",
+    mapmarker: "\f041",
+    wrench: "\f0ad",
+    thumbsup: "\f087",
+    file: "\f15b",
+    arrowright: "\f105",
+    arrowleft: "\f104",
+    googleplus:	"\f0d5",
+    twitter: "\f099",
+    facebook: "\f09a",
+    road: "\f018",
+    tag: "\f02b",
+    tags: "\f02c"
+  );
+
+  &:#{$beforeOrAfter} {
+    $icon-value: map-get($font-awesome-icons, $icon-name);
+
+    font: normal normal normal $icon-size fontawesome;
+    content: quote($icon-value);
+    color: $icon-color;
+    margin-right: 5px;
+  }
+}

@@ -1,0 +1,16 @@
+// Call To Action (Used Vehicle) Bundle
+.bean-call-to-action-used-vehicle {
+  @include button($full-width:true,$padding:$button-lrg);
+  margin-bottom: 8px;
+  padding: {
+    top: 20px;
+    bottom: 20px;
+  }
+  @include CSMCborder-radius(2px);
+
+  .field-name-field-icon {
+    font-size: rem-calc(27);
+    margin-bottom: 10px;
+  }
+
+}

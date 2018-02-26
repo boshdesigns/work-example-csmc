@@ -1,0 +1,133 @@
+// CSMC Custom Branch Info View
+
+.view-csmc-branch-info {
+
+  // Footer Numbers
+  &.view-display-id-footer_numbers {
+    .branch-tel-number {
+      color: #ffffff;
+      font: {
+        size: rem-calc(14);
+        weight: 600;
+      }
+      span {
+        display: block;
+        font-weight: 700;
+        @media #{$medium-up} {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  // Header Group Numbers
+  &.view-display-id-header_numbers,
+  &.view-display-id-header_sales_number {
+    text-align: center;
+    @media #{$medium-up} {
+      margin-top: 10px;
+    }
+    .branch-tel-number {
+      display: inline-block;
+      color: $primary-color;
+      margin-right: 15px;
+      font: {
+        size: rem-calc(22);
+        weight: 600;
+      }
+      span {
+        display: inline-block;
+        font-weight: 700;
+      }
+    }
+  }
+
+  // Opening Hours
+  &.view-display-id-opening_hours {
+    position: relative;
+    @include clearfix();
+    .opening-hours {
+      @media #{$small-only} {
+        margin-bottom: 10px;
+      }
+      @media #{$medium-only} {
+        float: left;
+        padding: 0 15px 30px;
+        width: 50%;
+      }
+
+      &:nth-child(3){
+        @media #{$medium-only} {
+          clear: both;
+          margin-bottom: 25px;
+        }
+      }
+
+      // Large Up Only
+      @media #{$large-up} {
+        float: left;
+        padding: 0 15px 30px;
+        width: 33.33333%;
+      }
+
+      h3 {
+        font-size: rem-calc(20);
+      }
+
+      // List styling
+      &__list {
+        @include block-grid($per-row:1);
+        @media #{$medium-up} {
+          @include block-grid($per-row:2);
+        }
+        li {
+          padding: {
+            top: 5px;
+            bottom: 5px;
+          }
+        }
+      }
+
+      // Each day + time styling
+      &--day,
+      &--opening-times {
+        width: 50%;
+        float: left;
+        font: {
+          size: rem-calc(14);
+          weight: 400;
+        }
+        line-height: rem-calc(20);
+      }
+
+      &--day {
+        font-weight: bold;
+      }
+
+      &--opening-times {
+        text-align: right;
+      }
+
+      &:first-child {
+
+        li:last-child {
+          .opening-hours--opening-times {
+            font: {
+              size: rem-calc(14);
+              weight: 400;
+            }
+            line-height: normal;
+            text-align: left;
+            width: 100%;
+            @media #{$medium-up} {
+              bottom: 0;
+              left: 10px;
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

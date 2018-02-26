@@ -1,0 +1,38 @@
+// Full View Mode
+.l-node-department--full {
+  @include grid-row($behavior:nest);
+  margin-bottom: 20px;
+  @media #{$medium-up} {
+    border-top: {
+      color: $primary-color;
+      style: solid;
+      width: 3px;
+    }
+    float: left;
+    margin: {
+      right: 0.5%;
+      left: 0.5%;
+    }
+    padding-top: 20px;
+    width: 49%;
+  }
+
+  // Large Up Only
+  @media #{$large-up} {
+    padding-top: 20px;
+    width: 24%;
+  }
+
+
+  &__telephone-numbers {
+    @include grid-column($columns:12);
+    @media #{$medium-up} {
+      margin-bottom: 20px;
+      min-height: 60px;
+    }
+  }
+  &__opening-hours {
+    @include grid-column(12);
+  }
+  &__title { @include grid-column(12); }
+}

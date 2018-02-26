@@ -1,0 +1,259 @@
+// Full View Mode
+.l-node-used-vehicle--full {
+  &__additional-vehicle-details,
+  &__features {
+    margin-bottom: 20px;
+    @include grid-column(12);
+  }
+  &__cta,
+  &__finance,
+  &__ivendi-finance-checker,
+  &__similar-vehicles {
+    @include grid-row();
+    &-inner {
+      @include grid-column(12);
+    }
+    @media #{$large-up} {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__form {
+    @include grid-row();
+    &-outer {
+      background: {
+        image: url(../images/details-enquiry-bg.gif);
+        repeat: no-repeat;
+        position: top left;
+      }
+    }
+    &-inner {
+      @include grid-column(12);
+    }
+    @media #{$large-up} {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__tabbed-content {
+    @include grid-column(12);
+    @media #{$large-up} {
+      margin-bottom: 100px;
+    }
+    &-outer {
+      @include grid-row();
+    }
+    &-inner {
+      @extend .csmc-drop-shadow;
+    }
+  }
+  &__files {
+    margin-bottom: 20px;
+    @include grid-column(12);
+  }
+
+  &__spec {
+    @include grid-column(12);
+  }
+
+  &__share-icons {
+    margin-right: rem-calc(15);
+    padding: 8px;
+    float: right;
+    @extend .csmc-drop-shadow--with-bg-colour;
+    @include CSMCborder-radius(2px);
+  }
+
+  &__gallery {
+    @include grid-column(12);
+    @media #{$medium-up} { @include grid-column(6); }
+    &-inner {
+      @extend .csmc-drop-shadow--with-bg-colour;
+    }
+    &-sash-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    &-main-specification-wrap {
+      @include grid-row();
+    }
+  }
+  &__header { @include grid-row(); }
+  &__main-specification {
+    @include grid-column(12);
+    @media #{$medium-up} { @include grid-column(6); }
+    &-inner {
+      margin-bottom: 20px;
+      padding: {
+        top: 20px;
+        bottom: 20px;
+      }
+      @extend .csmc-drop-shadow--with-bg-colour;
+      @include clearfix();
+    }
+  }
+  &__price {
+    @include grid-column(12);
+    @media #{$large-up} {
+      text-align: right;
+    }
+  }
+  &__monthly-price {
+    a {
+      color: $body-font-color;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  &__saving-price { margin-bottom: 5px; }
+  &__technical {
+    @include grid-column(12);
+    ul {
+      @include block-grid(1);
+      @media #{$large-up} {
+        @include block-grid(3);
+      }
+    }
+  }
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Search Result & Compare Vehicles View Mode
+.l-node-used-vehicle--compare-vehicle,
+.l-node-used-vehicle--search-result {
+  @include grid-row();
+
+  &__additional {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column(12);
+    }
+  }
+
+  &__details {
+    margin-bottom: 20px;
+    @extend .csmc-drop-shadow--with-bg-colour;
+    @include clearfix();
+    &-inner {
+      padding-top: 15px;
+      @media #{$medium-only} {
+        @include grid-column($columns:7,$collapse:true,$float:right);
+      }
+      @media #{$large-up} {
+        @include grid-column($columns:8,$collapse:true,$float:right);
+      }
+    }
+  }
+
+
+  &__footer {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column($columns:12,$collapse:true);
+    }
+  }
+  &__header { @include grid-row(); }
+  &__ivendi {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column($columns:12,$collapse:true);
+    }
+  }
+  &__more-info {
+    text-align: right;
+    @include grid-column($columns:6,$collapse:true,$float:right);
+  }
+
+  &__photo {
+    @include grid-column($columns:12,$collapse:true);
+    @media #{$medium-only} {
+      @include grid-column($columns:5,$collapse:true);
+      padding-right: 0;
+    }
+    @media #{$large-up} {
+      @include grid-column($columns:4,$collapse:true);
+      padding-right: 0;
+    }
+    &-sash-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  &__photo-inner {
+    position: relative;
+  }
+
+  &__photo-count {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+  }
+
+  &__photo-thumbs {
+    @include grid-column($columns:12, $collapse:true);
+  }
+
+  &__price {
+    @include grid-column(12);
+    @media #{$small-only} { text-align: center; }
+    @media #{$large-up} {
+      text-align: right;
+      @include grid-column($columns:4,$float:right);
+    }
+  }
+  &__monthly-price {
+    // overriden the color for this link field
+    a {
+       color: $body-font-color;
+     }
+  }
+  &__spec {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column(12);
+    }
+  }
+  &__title {
+    @include grid-column(12);
+    @media #{$large-up} { @include grid-column(8); }
+  }
+  &__youtube {
+    &-social-wrap {
+      padding: 8px;
+      float: left;
+      @extend .csmc-drop-shadow--with-bg-colour;
+      @include CSMCborder-radius(2px);
+    }
+  }
+
+
+  &.l-node-used-vehicle--search-result-multiple-images {
+    .l-node-used-vehicle--compare-vehicle__additional,
+    .l-node-used-vehicle--search-result__additional {
+      display: none;
+
+      // Medium Only
+      @media #{$medium-only} {
+        @include grid-column($columns:12);
+        display: block;
+        margin-top: 10px;
+      }
+
+      // Large Up Only
+      @media #{$large-up} {
+        @include grid-column($columns:7, $float:right);
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+<?php
+/**
+ * @file
+ * Code for the CSMC Site Config feature.
+ */
+
+include_once 'csmc_site_config.features.inc';
+
+
+function csmc_site_config_block_info() {
+
+  // Set up disclaimer block
+  $blocks['csmc_footer_disclaimer'] = array(
+    'info'  => t('CSMC - Disclaimer Text'),
+    'cache' => DRUPAL_CACHE_GLOBAL
+  );
+
+  // Sidebar CTA's
+  $blocks['csmc_sidebar_ctas'] = array(
+    'info'  => t('CSMC - Sidebar CTAs'),
+    'cache' => DRUPAL_CACHE_GLOBAL
+  );
+
+  return $blocks;
+}
+
+
+function csmc_site_config_block_view($delta = '') {
+
+  $block = array();
+
+  switch ($delta) {
+    case 'csmc_footer_disclaimer':
+      $block['subject'] = '';
+      $block['content'] = array(
+        '#markup' => '
+            <div class="footer-disclaimer-text">
+              <p>
+              Dando’s (Motor Services) Ltd t/as Chipping Sodbury Motor Company acts as a credit broker and is not a lender. Dando’s (Motor Services) Ltd t/as Chipping Sodbury Motor Company is authorised and regulated by the Financial Conduct Authority and its FCA registration number is 681817. Dando’s (Motor Services) Ltd t/as Chipping Sodbury Motor Company is an Appointed Representative of ITC Compliance Limited which is authorised and regulated by the Financial Conduct Authority (their registration number is 313486) and is permitted to advise on and arrange general insurance contracts. Dando’s (Motor Services) Ltd t/as Chipping Sodbury Motor Company is a company registered in England under company registration number 912101 having its registered office at Hatters Lane, Chipping Sodbury, South Gloucestershire, BS37 6AA. VAT Number: 137984818
+              </p>
+            </div>',
+      );
+      break;
+
+      case 'csmc_sidebar_ctas':
+      $block['subject'] = '';
+      $block['content'] = array(
+        '#markup' => '
+            <section class="csmc_sidebar_ctas">
+              <ul class="csmc_sidebar_ctas__list">
+                <li class="csmc_sidebar_ctas--call-to-action">
+                  <a href="http://ford.csmc.co.uk/" target="_blank"><img src="/' . drupal_get_path("module", "csmc_site_config") . '/images/ford-logo.png" />New<br/>Ford</a>
+                </li>
+                <li class="csmc_sidebar_ctas--call-to-action">
+                  <a href="/contact"><i class="fa fa-envelope" aria-hidden="true"></i>Contact<br/>Us</a>
+                </li>
+                <li class="csmc_sidebar_ctas--call-to-action">
+                  <a href="/book-service"><i class="fa fa-wrench" aria-hidden="true"></i>Book A<br/>Service</a>
+                </li>
+                <li class="csmc_sidebar_ctas--call-to-action">
+                  <a href="/book-test-drive"><i class="fa fa-road" aria-hidden="true"></i>Book Test<br/>Drive</a>
+                </li>
+              </ul>
+            </section>',
+      );
+      break;
+
+  }
+
+  return $block;
+}
+
+
+function csmc_site_config_preprocess_page(&$vars) {
+
+  // Invoke the footer disclaimer text
+  $footer_text_block = module_invoke('csmc_site_config', 'block_view', 'csmc_footer_disclaimer');
+
+  // Invoke the sidebar ctas list
+  $sidebar_ctas_block = module_invoke('csmc_site_config', 'block_view', 'csmc_sidebar_ctas');
+
+  // Place the footer discliamer text in footer_seventh region
+  $vars['page']['footer_seventh']['csmc_sidebar_ctas'] = array(
+   '#weight' => 100,
+   '#markup' => render($footer_text_block['content']),
+  );
+
+  // Add the css for the sidebar ctas
+  drupal_add_css(drupal_get_path("module", "csmc_site_config") . '/css/csmc.sidebar.ctas.css');
+  // Place the sidebar ctas in header region
+  $vars['page']['header']['csmc_footer_disclaimer'] = array(
+   '#weight' => 100,
+   '#markup' => render($sidebar_ctas_block['content']),
+  );
+
+  // Add tel numbers to footer second
+  $vars['page']['footer_second']['branch_telephone_numbers'] = array(
+   '#weight' => 101,
+   '#markup' => views_embed_view('csmc_branch_info', 'footer_numbers'),
+  );
+
+
+  // Remove search Intro Text out of it's normal Place
+  // And place into search_page_text region
+  $first_arg = arg(0);
+  $view = views_get_page_view();
+  if (isset($first_arg) && !empty($first_arg) && !empty($view->result)) {
+    if ($first_arg == "used") {
+      $intro_text = token_replace('[fmgauto:search_page_intro]');
+      $vars['page']['search_page_text']['search_intro'] = array(
+       '#weight' => 100,
+       '#markup' => $intro_text
+      );
+    }
+  }
+
+}
+
+function csmc_site_config_views_pre_render(&$views) {
+
+  // Set the search pahe intro text to nothing to
+  // print out in a different region
+  if($views->name == "fmgauto_search_pages") {
+    if(isset($views->header['area']->options['content']) && !empty($views->header['area']->options['content'])) {
+      $views->header['area']->options['content'] = "";
+    }
+  }
+
+}
+
+
+function csmc_site_config_context_load_alter(&$context) {
+
+  // Check to see if fmgauto_used_search_pages context is being used
+  if(isset($context->name) && $context->name == "fmgauto_used_search_pages") {
+
+    // Check if there is a block set on the context
+    if(isset($context->reactions['block'])) {
+      // Change the region of the block
+      $context->reactions['block']['blocks']['fmgauto_finance_plugins-finance_listing_calculator']['region'] = 'finance_adjustment_table';
+    }
+  }
+
+}

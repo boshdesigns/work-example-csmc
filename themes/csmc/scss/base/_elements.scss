@@ -1,0 +1,174 @@
+// Elements
+//
+// Things to review before you write code here:
+// - Be sure to load after "foundation" import.
+// - Also, before adding styles be sure to modify variables in the
+//   "base/_init.scss" file. You may not need to write any code.
+
+
+// Extendable Classes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.csmc-drop-shadow {
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+}
+
+.csmc-drop-shadow--with-bg-colour {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+}
+
+
+// Headings
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+h1.page__title--location {
+  color: #ffffff;
+  font: {
+    size: $crumb-font-size;
+    weight: 300;
+  }
+  margin-bottom: 0;
+  text-align: right;
+}
+.field-name-title h2 { font-size: $h1-font-size; }
+
+h2#page-title {
+  color: #ffffff;
+  @include CSMCtransition(0.3s);
+  @media #{$medium-up} {
+    font-size: rem-calc(36);
+  }
+}
+
+
+// Breadcrumbs
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.breadcrumbs {
+  margin-bottom: 0;
+  & > * a,
+  & > *::before {
+    font-weight: 300;
+  }
+}
+
+// Forms
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+select,
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="color"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+  @extend .csmc-drop-shadow;
+  @include CSMCborder-radius(2px);
+}
+
+
+// We need to style inputs + selects for search and finance forms
+.fmgauto-finance-plugins--adjustment-form,
+.block-fmg-search-blocks {
+  select,
+  input {
+    background-color: #a80e4c;
+    color: #ffffff;
+    height: 47px;
+    font: {
+      size: rem-calc(14);
+      weight: 700;
+    }
+    @include CSMCborder-radius(2px);
+    &:focus {
+      background-color: #a80e4c;
+    }
+  }
+
+  select {
+    background: {
+      image: url(../images/select-arrow.png);
+      position: top right;
+      repeat: no-repeat;
+    }
+    &:hover {
+      background-image: url(../images/select-arrow-hover.png);
+    }
+  }
+
+  #fmg_manufacturer_select,
+  #fmg-facetapi-select-facet-form-im-field-vehicle-model {
+    select,
+    input {
+      background-color: darken($primary-color, 3%);
+      &:focus {
+        background-color: darken($primary-color, 3%);
+      }
+    }
+  }
+}
+
+// Finance Disclaimer
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+.finance-disclaimer {
+  max-width: 1200px;
+  margin: {
+    top: 40px;
+    right: auto;
+    left: auto;
+  }
+  p {
+    line-height: normal;
+  }
+}
+
+.node-type-used-vehicle .finance-disclaimer {
+  padding: {
+    right: 15px;
+    left: 15px;
+  }
+}
+
+
+// Tables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.field-name-body {
+  table {
+    margin-bottom: 10px;
+    width: auto;
+    tbody {
+      border: none;
+    }
+    tr td {
+      border: {
+        color: #cccccc;
+        style: solid;
+        width: 1px;
+      }
+      padding: {
+        top: 5px;
+        right: 10px;
+        bottom: 5px;
+        left: 10px;
+      }
+    }
+  }
+}
+
+p{
+  font-weight: 400;
+}

@@ -1,0 +1,18 @@
+.l-breadcrumbs {
+  @include grid-row();
+  &__list {
+    @include grid-column($columns:12,$collapse:true);
+    @media #{$medium-up} {
+      @include grid-column(6);
+      padding-left: 0;
+    }
+  }
+  &__title {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column(6);
+      padding-right: 0;
+    }
+  }
+}

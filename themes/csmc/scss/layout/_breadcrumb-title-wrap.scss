@@ -1,0 +1,26 @@
+// Breadcrumb + Title wrapper
+
+.l-breadcrumb-title-wrap {
+  @include grid-row();
+  &__outer {
+    background-color: $secondary-color;
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
+    .bg-img {
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      max-width: 1920px;
+    }
+  }
+  &__inner {
+    @include grid-column(12);
+    position: relative;
+    z-index: 10
+  }
+}
+
+.page-used .l-breadcrumb-title-wrap__outer {
+  padding-bottom: 30px;
+}

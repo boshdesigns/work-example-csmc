@@ -1,0 +1,122 @@
+.fmgauto-finance-plugins {
+
+  &--finance-results {
+    &__columns--total-2 {
+      padding-right: 0 !important;
+      &:first-child {
+        padding-right: 0.5% !important;
+      }
+      &:last-child {
+        padding-left: 0.5% !important;
+      }
+    }
+  }
+
+  &--adjustment-form {
+
+    @media #{$medium-only} {
+      display: block;
+    }
+
+    &__title {
+      @include grid-column($columns:12,$collapse:true);
+      @media #{$large-up} {
+        @include grid-column(3);
+        padding-right: 0;
+        width: 19%;
+      }
+    }
+    &__inputs {
+      @include grid-column($columns:12,$collapse:true);
+      @media #{$medium-only} {
+        @include grid-column($columns:9,$collapse:true);
+      }
+      @media #{$large-up} {
+        @include grid-column(7);
+        width: 64.3333333333%;
+      }
+    }
+    &__update {
+      @include grid-column($columns:12,$collapse:true);
+      @media #{$medium-only} {
+        @include grid-column(3);
+        padding-right: 0;
+      }
+      @media #{$large-up} {
+        @include grid-column(2);
+        padding-left: 0;
+      }
+    }
+    .form-item-term {
+      @media #{$medium-only} {
+        @include grid-column($columns:2,$collapse:true);
+        padding-right: 5px;
+      }
+      @media #{$large-up} {
+        @include grid-column(2);
+        padding-right: 5px;
+      }
+    }
+    .form-item-deposit,
+    .form-item-mileage {
+      @media #{$medium-up} {
+        @include grid-column(5);
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+.page-used-results {
+  .fmgauto-finance-plugins--adjustment-form {
+    margin-bottom: 40px;
+    padding: 10px;
+    @extend .csmc-drop-shadow--with-bg-colour;
+    @include CSMCborder-radius(2px);
+
+    @media #{$large-up} {
+      padding: {
+        top: 10px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    &__title {
+      h3 {
+        font: {
+          size: rem-calc(18);
+          weight: 300;
+        }
+        @media #{$large-up} {
+          padding-top: 30px;
+        }
+      }
+    }
+
+    &__inputs {
+      .form-item {
+        margin-bottom: 0;
+        label {
+          color: #a80e4c;
+          font-weight: 300;
+        }
+      }
+    }
+
+    &__update {
+      button {
+        margin-top: 2px;
+        width: 100%;
+        @include CSMCborder-radius(2px);
+        @media #{$medium-only} {
+          margin: {
+            top: 21px;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

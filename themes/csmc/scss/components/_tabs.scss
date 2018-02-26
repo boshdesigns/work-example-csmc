@@ -1,0 +1,102 @@
+// Tabs
+.tabs {
+  li {
+    @media #{$small-only} { width: 100%; }
+  }
+
+  &--node-used-vehicle-tabs {
+    background-color: #ffffff;
+    @media #{$medium-up}{
+      @include block-grid($per-row:3,$spacing:1px);
+      margin: 0 0 0 -.5px;
+      @include CSMCborder-radius(3px 3px 0 0);
+    }
+    li {
+      text-align: center;
+      @media #{$medium-up}{
+        a {
+          @include CSMCborder-radius(3px 3px 0 0);
+        }
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .tab-title {
+    &.active {
+      a {
+        background-color: #ffffff;
+        color: $body-font-color;
+        &:hover {
+          color: #ffffff;
+          background-color: $primary-color;
+        }
+        &:focus {
+          background-color: #ffffff;
+          color: $body-font-color;
+        }
+      }
+    }
+    >a {
+      background-color: #ababab;
+      font-size: rem-calc(15);
+      &:hover {
+        color: #ffffff;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+// Tabs Content
+.tabs-content {
+
+  // New & Used Vehicle Gallery
+  &--node-new-vehicle-gallery,
+  &--node-new-vehicle-cap,
+  &--node-used-vehicle-gallery {
+    .content {
+      padding: 0;
+      .videos {
+        @include block-grid(1);
+        li {
+          padding-bottom: 0;
+          .file-video {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  &--node-new-vehicle-cap {
+    padding: 20px;
+    background-color: $secondary-color;
+  }
+
+  &--node-used-vehicle-dealer-details {
+    background-color: #ffffff;
+    padding: 20px;
+    @media #{$medium-only} {
+      padding: {
+        top: 30px;
+        right: 25px;
+        bottom: 30px;
+        left: 25px;
+      }
+    }
+    @media #{$large-up} {
+      padding: {
+        top: 80px;
+        right: 55px;
+        bottom: 80px;
+        left: 55px;
+      }
+    }
+    >.content.active {
+      padding-top: 0;
+    }
+  }
+
+}

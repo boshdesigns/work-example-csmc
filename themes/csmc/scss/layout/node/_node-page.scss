@@ -1,0 +1,58 @@
+// Full View Mode
+.l-node-page--full {
+  @extend .csmc-drop-shadow--with-bg-colour;
+  @include grid-row();
+  &__content--padding {
+    @include grid-column($columns:12,$collapse:true);
+    @media #{$medium-only} {
+      padding: 20px;
+    }
+    @media #{$large-up} {
+      padding: 50px;
+    }
+  }
+  &__child-node-list,
+  &__content,
+  &__form,
+  &__price,
+  &__title { @include grid-column(12); }
+  &__slideshow {
+    @include grid-column($columns:12,$collapse:true);
+  }
+  &__images {
+    width: 100%;
+    margin-bottom: 15px;
+    @media #{$medium-up} {
+      float: right;
+      width: 320px;
+      margin-left: 15px;
+    }
+  }
+  &__videos,
+  &__files {
+    width: 100%;
+    @media #{$medium-up} {
+      float: right;
+      clear: right;
+      width: 320px;
+      margin-left: 15px;
+    }
+  }
+
+}
+
+// Teaser View Mode
+.l-node-page--teaser {
+  @include grid-row($behavior:nest);
+  &__content {
+    @include grid-column(12);
+    @media #{$large-up} { @include grid-column(8); }
+  }
+  &__content--without-image,
+  &__price,
+  &__title { @include grid-column(12); }
+  &__images {
+    @include grid-column(12);
+    @media #{$large-up} { @include grid-column(4); }
+  }
+}

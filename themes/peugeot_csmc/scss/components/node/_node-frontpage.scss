@@ -1,0 +1,52 @@
+// Frontpage Bundle
+.node-frontpage {
+
+  // Full View Mode
+  &.view-mode-full {
+
+    .field-name-title {
+      text-align: center;
+      h1 {
+        margin: {
+          top: 5px;
+          bottom: 10px;
+        }
+        font-size: rem-calc(26);
+        @media #{$medium-up} {
+          font-size: $h1-font-size;
+        }
+        @media #{$large-up} {
+          margin: {
+            top: 15px;
+            bottom: 15px;
+          }
+        }
+        span {
+          color: #63798a;
+        }
+      }
+    }
+
+    .field-name-body {
+      p {
+        font: {
+          size: rem-calc(14);
+          weight: 400;
+        }
+      }
+      ul {
+        font: {
+          size: rem-calc(14);
+          weight: 400;
+        }
+      }
+    }
+
+    .field-name-promotional-blocks {
+      background-color: #ffffff;
+      padding-top: 15px;
+    }
+
+  }
+
+}

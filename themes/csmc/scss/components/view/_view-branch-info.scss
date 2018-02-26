@@ -1,0 +1,18 @@
+// Branch Info View
+.view-branch-info {
+
+  // Contact page styling
+  .view-mode-contact_page {
+    .field-name-title {
+      h2 {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  // Footer Addresses Display
+  &.view-display-id-footer_branch {
+    .view-branch-info__list { @include block-grid(1); }
+  }
+
+}

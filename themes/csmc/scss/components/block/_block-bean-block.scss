@@ -1,0 +1,24 @@
+// Block Bean Block
+// Style up the manufacturer logo in the header
+.block-bean-block {
+
+  // Custom Sass code name manufacturer to this list
+  $manulist: ford fiat peugeot 50-years;
+
+  // Loop over each manufacturer in the list
+  // And assign the styling to it
+  @each $manu in $manulist {
+    &-image-#{$manu} {
+      display: inline-block;
+      margin: {
+        right: 15px;
+        left: 15px;
+      }
+    }
+  }
+
+
+  &-image-50-years {
+    display: inline-block;
+  }
+}

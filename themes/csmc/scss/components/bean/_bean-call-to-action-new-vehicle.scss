@@ -1,0 +1,20 @@
+// Call To Action (New Vehicle) Bundle
+.bean-call-to-action-new-vehicle {
+  @include button($full-width:true,$padding:$button-lrg);
+  border-bottom: {
+    color: darken($primary-color, 10%);
+    width: 2px;
+    style: solid;
+  }
+  margin-bottom: 10px;
+  padding: {
+    top: 10px;
+    bottom: 10px;
+  }
+  @include CSMCborder-radius(2px);
+
+  .field-name-field-icon {
+    font-size: rem-calc(27);
+    margin-bottom: 10px;
+  }
+}

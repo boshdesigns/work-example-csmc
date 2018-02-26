@@ -1,0 +1,33 @@
+// group Home Link
+
+a.group-home-link {
+  background-color: $primary-color;
+  color: #ffffff;
+  display: block;
+  font-size: rem-calc(13);
+  padding: {
+    top: 8px;
+    bottom: 8px;
+    left: 15px;
+  }
+  @include CSMCtransition(0.3s);
+  &:hover {
+    background-color: $secondary-color;
+  }
+
+  @media #{$medium-up} {
+    background-color: transparent;
+    color: $secondary-color;
+    font-size: rem-calc(15);
+    padding: 0;
+    &:hover {
+      background-color: transparent;
+      color: $primary-color;
+    }
+  }
+
+  i {
+    margin-right: 10px;
+  }
+
+}

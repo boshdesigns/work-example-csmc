@@ -1,0 +1,24 @@
+// Webfonts imports
+// Manufacturer Ford Font
+
+@font-face {
+    font-family: 'ford_antenna_regularregular';
+    src: url('../webfonts/fordantennawgl-regular-webfont.eot');
+    src: url('../webfonts/fordantennawgl-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/fordantennawgl-regular-webfont.woff') format('woff'),
+         url('../webfonts/fordantennawgl-regular-webfont.ttf') format('truetype'),
+         url('../webfonts/fordantennawgl-regular-webfont.svg#ford_antenna_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ford_antennasemibold';
+    src: url('../webfonts/fordantennawgl-semibold-webfont.eot');
+    src: url('../webfonts/fordantennawgl-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/fordantennawgl-semibold-webfont.woff') format('woff'),
+         url('../webfonts/fordantennawgl-semibold-webfont.ttf') format('truetype'),
+         url('../webfonts/fordantennawgl-semibold-webfont.svg#ford_antennasemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

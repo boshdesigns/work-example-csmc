@@ -1,0 +1,30 @@
+// Vehicle Makes View
+.view-vehicle-makes {
+  border-top: {
+    color: lighten($primary-color, 10%);
+    style: solid;
+    width: 1px;
+  }
+  padding-top: 5px;
+  text-align: center;
+  @media #{$large-up} {
+    text-align: left;
+  }
+  .view-vehicle-makes__list {
+    margin-left: 0;
+    margin-bottom: 5px;
+    li {
+      display: inline-block;
+      list-style: none;
+      &:not(:last-child) a:after {
+        content: ',';
+      }
+      a {
+        display: block;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        color: #ffffff;
+      }
+    }
+  }
+}

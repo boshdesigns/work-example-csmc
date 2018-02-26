@@ -1,0 +1,52 @@
+// FMG Search Pages View
+.view-fmgauto-search-pages {
+  .view-filters {
+    @media #{$medium-up} {
+      margin-bottom: 60px;
+    }
+    label {
+      font-weight: 300;
+    }
+    select {
+      background-color: #ffffff;
+      height: 47px;
+      padding: {
+        top: 8px;
+        left: 15px;
+      }
+      &#edit-sort-by {
+        width: 210px;
+      }
+      &#edit-items-per-page {
+        width: 110px;
+      }
+    }
+  }
+
+  .views-submit-button {
+    .form-submit {
+      border: none;
+      color: $body-font-color;
+      clear: left;
+      float: none;
+      margin-top: 0;
+      width: 140px;
+      @extend .csmc-drop-shadow--with-bg-colour;
+      @include CSMCtransition(0.3s);
+      @media #{$medium-up} {
+        clear: none;
+        float: left;
+        margin-top: 21px;
+        margin-left: 15px;
+      }
+      &:hover {
+        background-color: $primary-color;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &__list {
+    @include block-grid(1);
+  }
+}

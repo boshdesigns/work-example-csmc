@@ -1,0 +1,22 @@
+// Footer Message
+.block-fmgauto-generic-site-settings {
+  &-fmg-dealer-footer-message {
+    color: #ffffff;
+    text-align: center;
+    @media #{$medium-up} {
+      padding-right: 10px;
+      text-align: left;
+    }
+    a { color: #ffffff; }
+
+    // Hacky way to get the heights on text to match in footer
+    p {
+      line-height: 1.5;
+      padding-right: 21px;
+      font: {
+        size: rem-calc(14);
+        weight: 600;
+      }
+    }
+  }
+}

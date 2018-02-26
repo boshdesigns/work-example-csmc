@@ -1,0 +1,17 @@
+// Layout for finance-adjustment-table
+.l-finance-adjustment-table {
+  @include grid-row();
+  &-outer {
+    display: none;
+    @extend .csmc-drop-shadow--with-bg-colour;
+    @media #{$medium-up}{
+      display: block;
+    }
+  }
+  &-inner {
+    @include grid-column(12);
+    @media #{$large-up} {
+      @include grid-column(12,$collapse:true);
+    }
+  }
+}

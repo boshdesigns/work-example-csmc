@@ -1,0 +1,64 @@
+// Layout for page title
+// This is mainly for when it fixes to the browser top
+.l-page-title__additional-button {
+  display: none;
+}
+
+.l-page-title-outer.stick {
+  background-color: $secondary-color;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  @extend .csmc-drop-shadow;
+  .l-page-title {
+    @include grid-row();
+    &-inner {
+      @include grid-column(12);
+      h2#page-title {
+        height: 25px;
+        font-size: rem-calc(18);
+        overflow: hidden;
+        @media #{$medium-up} {
+          height: auto;
+          font-size: rem-calc(20);
+          overflow: visible;
+        }
+      }
+    }
+
+    &__heading {
+      float: left;
+      margin-bottom: 0;
+      margin-top: 10px;
+    }
+
+    &__additional-button {
+      display: block;
+      a {
+        background-color: transparent;
+        color: white;
+        float: right;
+        padding-left: 10px;
+        @include CSMCtransition(0.3s);
+        &:hover {
+          background-color: $primary-color;
+        }
+        i {
+          background-color: $primary-color;
+          color: white;
+          padding: {
+            top: 15px;
+            bottom: 17px;
+          }
+          margin-left: 10px;
+          text-align: center;
+          width: 48px;
+        }
+      }
+    }
+
+  }
+
+}

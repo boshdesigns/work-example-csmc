@@ -1,0 +1,17 @@
+// CSMC Promo Blocks
+.view-csmc-promotional-blocks {
+
+  // Sidebar Display
+  // Custom Sass code name manufacturer to this list
+  $eachsite: group ford fiat peugeot;
+
+  // Loop over each manufacturer in the list
+  // And assign the styling to it
+  @each $manu in $eachsite {
+    &.view-display-id-#{$manu}_page_blocks,
+    &.view-display-id-#{$manu}_sidebar {
+      .view-promotional-blocks__list { @include block-grid(1); }
+    }
+  }
+
+}

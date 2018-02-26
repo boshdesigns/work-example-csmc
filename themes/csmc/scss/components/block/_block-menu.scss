@@ -1,0 +1,33 @@
+// Block Menu
+.block-menu {
+
+  // Footer Links
+  &.block-menu-menu-footer-links {
+    .menu {
+      margin-left: 0;
+      margin-bottom: 10px;
+      text-align: center;
+      @media #{$medium-up} {
+        text-align: left;
+      }
+      li {
+        display: inline-block;
+        margin-top: -8px;
+        margin-left: 5px;
+        margin-right: 5px;
+        list-style: none;
+        @media #{$medium-up} {
+          display: block;
+        }
+        a {
+          color: #ffffff;
+          font: {
+            size: rem-calc(14);
+            weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+}
