@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Call To Action feature.
- */
-
-include_once 'fmgauto_promotional_block_picture.features.inc';
